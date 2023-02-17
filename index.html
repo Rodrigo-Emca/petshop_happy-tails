@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/images/Icono_Favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <title>Home | Happy Tails Petshop </title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div>
+                    <a class="navbar-brand" href="./index.html"><img src="./assets/images/Logo_petshop.png" alt="petshop_logo" height="100rem" id="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 gap-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="anchor" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="anchor" href="./juegueteria.html">Jugueteria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="anchor" href="./farmacia.html">Farmacia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="anchor" href="./contacto.html">Contacto</a>
+                    </li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="./shop.html"><img src="./assets/images/carrito.png" alt="ir_a_compras" height="75rem" id="carrito"></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="carrousel">
+            <!--  <img src="./assets/images/Logo_petshop.png" alt class="logo-carousel"> -->
+            <!-- inicio carousel -->
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./assets/images/animals.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block" id="texto-carousel">
+                    <!--  <h5 class="carousel-text">First slide label</h5> -->
+                    <p class="carousel-text">Some representative placeholder content for the first slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/images/anim.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block" id="texto-carousel">
+                    <!-- <h5>Second slide label</h5> -->
+                    <p class="carousel-text">Some representative placeholder content for the second slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/images/animals-2.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block" id="texto-carousel">
+                    <!-- <h5>Third slide label</h5> -->
+                    <p class="carousel-text">Some representative placeholder content for the third slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/images/animals-2.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block" id="texto-carousel">
+                    <!-- <h5>Fourth slide label</h5> -->
+                    <p class="carousel-text">Aqui va el ABOUT US.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div><!-- fin carousel -->
+
+        <div class="" id="tarjetasJugueteriaYFarmacia">
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="d-flex flex-wrap g-4 justify-content-evenly">
+                    <div class="card col-12 col-md-5 p-2 text-center " id="tarjetaIndividual">
+                        <img
+                        src="https://media.istockphoto.com/id/471917492/es/foto/spielende-katze.jpg?s=612x612&w=0&k=20&c=BSfgre8CRxIvUdq5mZpX-tqceGjbcI-RCOQR_JS9I2s="
+                        class="card-img-top object-fit-cover"
+                        style="height: 16rem"
+                        alt="Jugueteria"/>
+                        <div class="card-body">
+                        <h5 class="card-title">Jugueteria</h5>
+                        <p class="card-text">
+                            Nos encantaría que vinieras a explorar nuestra selección de juguetes divertidos y emocionantes para mantener a tu peludo amigo entretenido y feliz. Ya sea que tengas un perro, un gato, un conejo o cualquier otra mascota, ¡tenemos algo para ellos!
+                        </p>
+                        <a href="./juegueteria.html" class="btn btn-primary">Visita nuestra juegueteria</a>
+                        </div>
+                    </div>
+                    <div class="card col-12 col-md-5 p-2 text-center " id="tarjetaIndividual"> 
+                        <img
+                        src="https://media.istockphoto.com/id/1386206447/es/foto/perro-brown-border-collie-durante-la-visita-en-el-veterinario.jpg?s=612x612&w=0&k=20&c=e-5w0qI0_rk62PDSbUQW6bnSxb5Hd5PEGTf1gG_sgao="
+                        class="card-img-top object-fit-cover"
+                        style="height: 16rem"
+                        alt="Jugueteria"/>
+                        <div class="card-body">
+                        <h5 class="card-title">Farmacia</h5>
+                        <p class="card-text">
+                            ¡No dudes en visitarnos en nuestra tienda veterinaria! Estamos aquí para ayudarte a cuidar a tus adorables amigos peludos.
+                        </p>
+                        <a href="./juegueteria.html" class="btn btn-primary">Visita nuestra farmacia</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="aboutUs">
+          <h2>Acerca de Nosotros</h2>
+          <br>
+          <h5>Bienvenido a nuestra tienda de mascotas, donde los animales son nuestra pasión y nuestra prioridad. En nuestro petshop, nos esforzamos por brindar a tus amigos peludos el cuidado y la atención que se merecen.</h5>
+          <h5>Somos un equipo de amantes de los animales, dedicados a asegurarnos de que tus mascotas sean felices y saludables. Todos nuestros empleados tienen una gran experiencia en el cuidado de animales y están entrenados para manejar cualquier situación que pueda surgir.</h5>
+          <h5>En nuestra tienda, encontrarás una amplia selección de productos para mascotas de alta calidad, desde alimentos hasta juguetes y accesorios. 
+            Nos enorgullece ser una tienda que valora la ética y el bienestar de los animales. Trabajamos con proveedores que comparten nuestra pasión por el cuidado animal y garantizamos que todos los productos que ofrecemos cumplen con los estándares de calidad y seguridad.</h5>
+          <h5>Nos esforzamos por crear un ambiente cálido y acogedor donde los dueños de mascotas puedan sentirse cómodos y seguros de que sus amigos peludos están en buenas manos. Ya sea que estés buscando una nueva mascota o simplemente necesites productos y servicios para su cuidado, estaremos encantados de ayudarte.</h5>
+          <h5>En resumen, en nuestro petshop, creemos que cada animal es único y especial, y trabajamos duro para asegurarnos de que reciban el amor y la atención que se merecen. Gracias por visitarnos y por confiar en nosotros para el cuidado de tus amigos peludos.</h5>
+        </div>
+
+
+    </main>
+
+    <footer>
+      <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.243040483404!2d-58.401195400000006!3d-34.5980153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9158e82c41%3A0xafb5fe117a2c5a52!2sParaguay%202334%2C%20C1121ABL%20CABA!5e0!3m2!1ses-419!2sar!4v1676646603560!5m2!1ses-419!2sar" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="text-center">
+        <h5> Encuentranos en nuestras sucursales:</h5>
+        <p> Dirección: </p>
+        <h5> Paraguay 2334 5 F </h5>
+      </div>
+      <div class="d-flex flex-column justify-content-center align-items-center gap-5">
+        <div>
+          <h5> Nuestras Redes Sociales:</h5>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/"><img src="./assets/images/pwrS8X-logo-instagram-photo.png" style="width: 3rem;" alt=""> </a>
+          <a href="https://www.whatsapp.com/"><img src="./assets/images/whats.png" style="width: 3rem;" alt=""> </a>
+          <a href="https://www.facebook.com/"><img src="./assets/images/facebook.png" style="width: 3rem;" alt=""> </a>
+        </div>
+      </div>
+    </footer>
+    
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+/* *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/*form de contacto*/
+
+#aboutUs{
+    margin: 3rem;
+    text-align: justify;
+}
+
+.form-content {
+    color: #db9345;
+    display: flex;
+    justify-content: center;
+    height: 50rem;
+    width: 100vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.formFinalDiv input {
+    display: flex;
+    background-color: #db9345;
+    border: solid 2px #ffffff;
+    display: flex;
+    align-self: center;
+}
+
+.select-op {
+    appearance: none;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    background-color: rgb(224, 224, 224);
+    margin: 0.3rem;
+}
+
+.form-tot {
+    background-color: #24492E;
+    min-width: 55vw;
+    border: solid 4px #db9345;
+    border-style: double;
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.innerDivsForm {
+    display: flex;
+    /* border: solid 2px rgb(141, 109, 67); */
+    padding: 2rem;
+    height: 7rem;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formFinalDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#boxMensaje{
+    max-width: 50vw;
+    max-height: 10vh;
+}
+
+#botonEnviar {
+    margin-top: 1rem;
+}
+
+
+#cards-mod {
+    border: solid 2px #db9345;
+
+    border-radius: 0.5rem;
+}
+
+.buttons-card {
+    background-color: #24492E;
+    border: solid 2px #db9345;
+    color: #DBFDFF;
+}
+
+.form-content h3 {
+    text-align: center;
+    margin: 1.5rem;
+    font-weight: bolder;
+    color: #db9345;
+}
+
+.nav-link {
+    color: #406646;
+}
+
+input {
+    appearance: none;
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    background-color: rgb(224, 224, 224);
+    margin: 0.3rem;
+}
+
+header {
+    padding: 1.5rem !important;
+    border: 2px rgba(76, 66, 66, 0.197) solid !important;
+    background-color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+main {
+    min-height: 80vw;
+}
+
+#carrito:hover {
+    transform: scale(1.15);
+}
+
+#logo:hover {
+    transform: scale(1.25);
+    transform: rotate(-15deg);
+}
+
+#titulosPag {
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#carrousel {
+    padding: 2rem;
+}
+
+.carousel-text {
+    color: black;
+    /*  box-shadow:  60px -16px teal; */
+    /*  text-shadow: -2px 5px 0px #2989FF; */
+    text-shadow: 6px 0px 20px #DBFDFF;
+    font-size: 2rem;
+}
+
+
+.logo-carousel {
+    position: relative;
+    z-index: 3;
+    padding-top: 6rem;
+    left: 2rem;
+    width: 12rem;
+}
+
+#tarjetasJugueteriaYFarmacia {
+    padding: 2rem;
+    gap: 2rem;
+    /* border: solid red 2px; */
+}
+
+#tarjetaIndividual{
+    /* border: solid blue 2px; */
+    padding: 1.5rem !important;
+}
+
+footer {
+    background-color: rgb(250, 250, 250);
+    border: solid 2px #db9345;
+    min-height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 2rem;
+
+}
+
+
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+
+    .logo-carousel {
+        position: absolute;
+        z-index: 3;
+        top: 3rem;
+        left: 2rem;
+        /*  border: 2px solid red; */
+        width: 6rem;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 15vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .logo-carousel {
+        position: absolute;
+        z-index: 3;
+        top: 3rem;
+        left: 2rem;
+        /*  border: 2px solid red; */
+        width: 8rem;
+
+    }
+}
+
+
+@media (min-width: 1024px) {
+
+    .logo-carousel {
+        position: absolute;
+        z-index: 3;
+        top: 3rem;
+        left: 2rem;
+        /*  border: 2px solid red; */
+        width: 12rem;
+    }
+    #anchor:hover {
+        transform: scale(1.25);
+        }
+}
