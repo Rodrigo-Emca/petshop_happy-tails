@@ -1,5 +1,16 @@
 //Funciones Exportadas:
 
+export function modal(lista){
+    let aux = []
+    let contador = 0
+    lista.forEach( item => {
+        let modal = contador ++
+        item.modal = modal
+        aux.push(item)
+    });
+    return aux
+}
+
 export function filtrarPorCategoria(array, categoria){
     const productosPorCategoria = array.filter(producto => producto.categoria == categoria)
     return productosPorCategoria    
@@ -30,7 +41,7 @@ export function agregarTarjetas(array, elementoDestino){
 
 export function crearTarjeta(lista){
     if (lista.disponibles === 0) {
-        console.log(lista.disponibles)
+        // console.log(lista.disponibles)
         return `
         <div class="card text-center col-md-3 m-4" style="width: 18rem;">
         <div class="card-body">
@@ -41,12 +52,12 @@ export function crearTarjeta(lista){
             <div class="d-flex justify-content-around"> 
     
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista["_id"]}">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista.modal}">
             Detalles
             </button>
     
             <!-- Modal -->
-            <div class="modal fade" id="${lista["_id"]}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="${lista.modal}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -78,15 +89,15 @@ export function crearTarjeta(lista){
             <div class="d-flex justify-content-around">
     
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista["_id"]}">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista.modal}">
             Detalles
             </button>
-            <button type="button" class="btn btn-primary id="${lista._id}"">
+            <button id="${lista._id}" type="button" class="btn btn-primary">
             Agregar al carrito
             </button>
     
             <!-- Modal -->
-            <div class="modal fade" id="${lista["_id"]}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="${lista.modal}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -118,15 +129,15 @@ export function crearTarjeta(lista){
             <div class="d-flex justify-content-around">
     
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista["_id"]}">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista.modal}">
             Detalles
             </button>
-            <button type="button" class="btn btn-primary id="${lista._id}"">
+            <button id="${lista._id}" type="button" class="btn btn-primary">
             Agregar al carrito
             </button>
-    
+            
             <!-- Modal -->
-            <div class="modal fade" id="${lista["_id"]}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="${lista.modal}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
@@ -154,7 +165,7 @@ export function filtrarCoincidencias(listaProductos, keywordIngresado) {
     for (let producto of listaProductos){
         if((producto["producto"].toLowerCase()).includes(keywordIngresado)){
         coincidencias.push(producto)
-        console.log(producto)
+        // console.log(producto)
     }
     }
     return coincidencias
