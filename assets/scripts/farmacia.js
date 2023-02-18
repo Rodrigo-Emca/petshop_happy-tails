@@ -7,17 +7,17 @@ const $keyword = document.getElementById("keyword")
 const myModal = document.getElementById('myModal')
 const myInput = document.getElementById('myInput')
 
-let productosSelec = []
+let filtro = []
+let productosSelec = filtro.filter(Boolean)
 
 fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
 .then(data => data.json())
 .then(response => {
-        const productos = response.filter( item => item.categoria === 'farmacia')
-        const farmacia = modal(productos)    
-        // console.log(farmacia);    
+        const productos = modal(response)
+        const farmacia = productos.filter( producto => producto.categoria === 'farmacia')    
         agregarTarjetas(farmacia,$contenedorTarjetas);
         
-        $keyword.addEventListener("keyup", () => {
+        $keyword.addEventListener("keyup", (e) => {
             $contenedorTarjetas.innerHTML = ``
             const palabras = ($keyword.value).toLowerCase()
             const filtrados = filtrarCoincidencias(farmacia,palabras)
@@ -26,7 +26,7 @@ fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
         
         $contenedorTarjetas.addEventListener('click', (e) => {
             if( e.target.localName === 'button'){
-                productosSelec.push( farmacia.find( item => item._id === e.target.id))
+                filtro.push( farmacia.find( item => item._id == e.target.id))
                 console.log(productosSelec);
             }
         })
