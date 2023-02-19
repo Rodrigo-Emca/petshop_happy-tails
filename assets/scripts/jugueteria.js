@@ -5,6 +5,7 @@ const $contenedorTarjetas = document.getElementById("contenedorProductos")
 const $keyword = document.getElementById("keyword")
 
 
+let productosSelec = 
 
 fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
     .then( data => data.json())
