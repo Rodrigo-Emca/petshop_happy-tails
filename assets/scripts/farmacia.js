@@ -7,39 +7,30 @@ const $keyword = document.getElementById("keyword")
 const myModal = document.getElementById('myModal')
 const myInput = document.getElementById('myInput')
 
-
-let productosSelec = JSON.parse(localStorage.getItem('Productos Seleccionados')) || []
+let productosSelec = []
 
 fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
 .then(data => data.json())
 .then(response => {
-        const productos = modal(response)
-        const farmacia = productos.filter( producto => producto.categoria === 'farmacia')    
-        agregarTarjetas(farmacia,$contenedorTarjetas,productosSelec);
+        const productos = response.filter( item => item.categoria === 'farmacia')
+        const farmacia = modal(productos)    
+        // console.log(farmacia);    
+        agregarTarjetas(farmacia,$contenedorTarjetas);
         
-        $keyword.addEventListener("keyup", (e) => {
+        $keyword.addEventListener("keyup", () => {
             $contenedorTarjetas.innerHTML = ``
             const palabras = ($keyword.value).toLowerCase()
             const filtrados = filtrarCoincidencias(farmacia,palabras)
-            agregarTarjetas(filtrados,$contenedorTarjetas,productosSelec)
+            agregarTarjetas(filtrados,$contenedorTarjetas)
         })
         
         $contenedorTarjetas.addEventListener('click', (e) => {
-            if( e.target.name === 'carrito'){
-                if( productosSelec.some( producto => producto._id == e.target.id)){
-                    productosSelec = productosSelec.filter( producto => producto._id !== e.target.id)
-                    e.target.classList.replace('bg-secondary','bg-white')
-                    localStorage.setItem('Productos Seleccionados',JSON.stringify(productosSelec))
-                }
-                else {
-                    productosSelec.push( farmacia.find( item => item._id == e.target.id))
-                    e.target.classList.replace('bg-white','bg-secondary')
-                    localStorage.setItem('Productos Seleccionados',JSON.stringify(productosSelec))
-                }
+            if( e.target.localName === 'button'){
+                productosSelec.push( farmacia.find( item => item._id === e.target.id))
+                console.log(productosSelec);
             }
         })
-        
-    })
-    .catch( error => console.log('OJO con este ERROR ------> : ',error))
-    
 
+
+    })
+    .catch(error => console.log(error))

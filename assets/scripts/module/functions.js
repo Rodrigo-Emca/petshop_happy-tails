@@ -42,6 +42,7 @@ export function agregarTarjetas(array, elementoDestino,productosSelec){
 export function crearTarjeta(lista,productosSelec){
     let color = productosSelec.some( producto => producto._id == lista._id) ? 'bg-secondary' : 'bg-white'
     if (lista.disponibles === 0) {
+        // console.log(lista.disponibles)
         return `
         <div class="card text-center col-md-3 m-4" style="width: 18rem;">
         <div class="card-body">
@@ -92,8 +93,9 @@ export function crearTarjeta(lista,productosSelec){
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista.modal}">
             Detalles
             </button>
-            <a><img name="carrito" id="${lista._id}" class="${color}" src="./assets/images/carrito.png" alt="ir_a_compras" height="50rem" ></a>
-            
+            <button id="${lista._id}" type="button" class="btn btn-primary">
+            Agregar al carrito
+            </button>
     
             <!-- Modal -->
             <div class="modal fade" id="${lista.modal}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -131,8 +133,9 @@ export function crearTarjeta(lista,productosSelec){
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista.modal}">
             Detalles
             </button>
-            <a class"carrito-card"><img name="carrito" id="${lista._id}" class="${color}" src="./assets/images/carrito.png" alt="ir_a_compras" height="50rem" ></a>
-
+            <button id="${lista._id}" type="button" class="btn btn-primary">
+            Agregar al carrito
+            </button>
             
             <!-- Modal -->
             <div class="modal fade" id="${lista.modal}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
