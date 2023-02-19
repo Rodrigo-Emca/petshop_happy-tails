@@ -26,20 +26,21 @@ export function getCategories(nodos){
     return categorias
     }
 
-export function agregarTarjetas(array, elementoDestino){
+export function agregarTarjetas(array, elementoDestino,productosSelec){
     if(array.length === 0){return elementoDestino.innerHTML = `
     <div class="d-flex flex-column justify-content-center pt-3">
     <h3 class="text-center pt-2 pb-2">Lo sentimos, no pudimos encontrar lo que buscas. <br>  Por favor, intentalo de nuevo.</h3> <br> <img src="https://media.istockphoto.com/id/1357410154/es/foto/perro-labradoodle-tendido-en-el-suelo-con-expresi%C3%B3n-triste-o-somnolienta.jpg?s=612x612&w=0&k=20&c=ayVTZmZuczlylwr7-VsalOguqNp23hzdupcEeA7HjW4=" height="500rem"></img></div>`}
     else{
         let template = ""
         for (let lista of array){
-        template += crearTarjeta(lista)
+        template += crearTarjeta(lista,productosSelec)
     }
     elementoDestino.innerHTML += template
     }
 }
 
-export function crearTarjeta(lista){
+export function crearTarjeta(lista,productosSelec){
+    let color = productosSelec.some( producto => producto._id == lista._id) ? 'bg-secondary' : 'bg-white'
     if (lista.disponibles === 0) {
         // console.log(lista.disponibles)
         return `

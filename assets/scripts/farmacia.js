@@ -34,5 +34,3 @@ fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
 
     })
     .catch(error => console.log(error))
-
-

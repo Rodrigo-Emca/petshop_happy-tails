@@ -1,33 +1,29 @@
-import{filtrarPorCategoria, agregarTarjetas, filtrarCoincidencias} from "./module/functions.js"
+import{ modal, agregarTarjetas, filtrarCoincidencias} from "./module/functions.js"
 
 
 const $contenedorTarjetas = document.getElementById("contenedorProductos")
 const $keyword = document.getElementById("keyword")
 
-let productos;
-let categorias;
-let jugueteriaProductos;
+
+let productosSelec = 
 
 fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
     .then( data => data.json())
     .then( response => {
-        productos = response;
-        jugueteriaProductos= filtrarPorCategoria(productos, "jugueteria")
+        const productos = modal(response)
+        const jugueteria = productos.filter( producto => producto.categoria == 'jugueteria')
+        agregarTarjetas(jugueteria,$contenedorTarjetas)
 
-        categorias = [...new Set(productos.map(producto => producto.categoria))]
-
-        agregarTarjetas(jugueteriaProductos, $contenedorTarjetas);
+        $keyword.addEventListener("keyup", () => {
+            $contenedorTarjetas.innerHTML = ``
+            const palabras = ($keyword.value).toLowerCase()
+            const filtrados = filtrarCoincidencias(jugueteria,palabras)
+            agregarTarjetas(filtrados,$contenedorTarjetas)
+            })
+        
     }
     )
     .catch(error => console.log(error))
 
-//EVENTOS
 
-$keyword.addEventListener("keyup", () => {
-    $contenedorTarjetas.innerHTML = ``
-    
-    const palabras = ($keyword.value).toLowerCase()
-    
-    agregarTarjetas(filtrarCoincidencias(jugueteriaProductos, palabras), $contenedorTarjetas)
-    }
-    )
+
