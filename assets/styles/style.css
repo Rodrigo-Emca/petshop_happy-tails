@@ -114,9 +114,7 @@ header {
 main {
     min-height: 80vw;
 }
-.carrito:hover {
-    transform: scale(1.15);
-}
+
 #carrito:hover {
     transform: scale(1.15);
 }

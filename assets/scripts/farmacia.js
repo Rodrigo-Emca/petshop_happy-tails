@@ -15,32 +15,31 @@ fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
 .then(response => {
         const productos = modal(response)
         const farmacia = productos.filter( producto => producto.categoria === 'farmacia')    
-        agregarTarjetas(farmacia,$contenedorTarjetas);
+        agregarTarjetas(farmacia,$contenedorTarjetas,productosSelec);
         
         $keyword.addEventListener("keyup", (e) => {
             $contenedorTarjetas.innerHTML = ``
             const palabras = ($keyword.value).toLowerCase()
             const filtrados = filtrarCoincidencias(farmacia,palabras)
-            agregarTarjetas(filtrados,$contenedorTarjetas)
+            agregarTarjetas(filtrados,$contenedorTarjetas,productosSelec)
         })
         
         $contenedorTarjetas.addEventListener('click', (e) => {
             if( e.target.name === 'carrito'){
                 if( productosSelec.some( producto => producto._id == e.target.id)){
                     productosSelec = productosSelec.filter( producto => producto._id !== e.target.id)
-                    e.target.classList.remove('bg-secondary')
+                    e.target.classList.replace('bg-secondary','bg-white')
                     localStorage.setItem('Productos Seleccionados',JSON.stringify(productosSelec))
                 }
                 else {
                     productosSelec.push( farmacia.find( item => item._id == e.target.id))
-                    e.target.classList.add('bg-secondary')
+                    e.target.classList.replace('bg-white','bg-secondary')
                     localStorage.setItem('Productos Seleccionados',JSON.stringify(productosSelec))
                 }
             }
         })
         
-        
     })
-    .catch(error => console.log(error))
+    .catch( error => console.log('OJO con este ERROR ------> : ',error))
     
 
