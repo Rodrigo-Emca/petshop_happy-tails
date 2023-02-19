@@ -92,9 +92,8 @@ export function crearTarjeta(lista){
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista.modal}">
             Detalles
             </button>
-            <button id="${lista._id}" type="button" class="btn btn-primary">
-            Agregar al carrito
-            </button>
+            <a class"carrito-card"><img name="carrito" id="${lista._id}" src="./assets/images/carrito.png" alt="ir_a_compras" height="50rem" ></a>
+            
     
             <!-- Modal -->
             <div class="modal fade" id="${lista.modal}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -132,9 +131,8 @@ export function crearTarjeta(lista){
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${lista.modal}">
             Detalles
             </button>
-            <button id="${lista._id}" type="button" class="btn btn-primary">
-            Agregar al carrito
-            </button>
+            <a class"carrito-card"><img name="carrito" id="${lista._id}" src="./assets/images/carrito.png" alt="ir_a_compras" height="50rem" ></a>
+
             
             <!-- Modal -->
             <div class="modal fade" id="${lista.modal}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -7,8 +7,8 @@ const $keyword = document.getElementById("keyword")
 const myModal = document.getElementById('myModal')
 const myInput = document.getElementById('myInput')
 
-let filtro = []
-let productosSelec = filtro.filter(Boolean)
+
+let productosSelec = JSON.parse(localStorage.getItem('Productos Seleccionados')) || []
 
 fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
 .then(data => data.json())
@@ -25,14 +25,22 @@ fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
         })
         
         $contenedorTarjetas.addEventListener('click', (e) => {
-            if( e.target.localName === 'button'){
-                filtro.push( farmacia.find( item => item._id == e.target.id))
-                console.log(productosSelec);
+            if( e.target.name === 'carrito'){
+                if( productosSelec.some( producto => producto._id == e.target.id)){
+                    productosSelec = productosSelec.filter( producto => producto._id !== e.target.id)
+                    e.target.classList.remove('bg-secondary')
+                    localStorage.setItem('Productos Seleccionados',JSON.stringify(productosSelec))
+                }
+                else {
+                    productosSelec.push( farmacia.find( item => item._id == e.target.id))
+                    e.target.classList.add('bg-secondary')
+                    localStorage.setItem('Productos Seleccionados',JSON.stringify(productosSelec))
+                }
             }
         })
-
-
+        
+        
     })
     .catch(error => console.log(error))
-
+    
 

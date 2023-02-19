@@ -18,8 +18,8 @@ fetch(`https://mindhub-xj03.onrender.com/api/petshop`)
             const palabras = ($keyword.value).toLowerCase()
             const filtrados = filtrarCoincidencias(jugueteria,palabras)
             agregarTarjetas(filtrados,$contenedorTarjetas)
-            }
-            )
+            })
+        
     }
     )
     .catch(error => console.log(error))
